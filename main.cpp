@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
@@ -28,8 +29,10 @@ string perevod(int num)
 }
 int main()
 {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
     string str;
-    cin >> str;
+    fin >> str;
     string num = "";
     for (int i = 0; i < str.length(); i++)
     {
@@ -53,8 +56,7 @@ int main()
     }
     if (num != "")
     {
-        cout << perevod(atoi(num.c_str()));
+        fout << perevod(atoi(num.c_str()));
     }
-    cout << endl;
     return 0;
 }
